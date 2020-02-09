@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "/home/mike/.local/share/virtualenvs/recipe-app-api-oU1tVuam/bin/python"
+  "python.pythonPath": "/home/mike/.local/share/virtualenvs/recipe-app-api-oU1tVuam/bin/python",
+  "python.linting.enabled": true
 }
