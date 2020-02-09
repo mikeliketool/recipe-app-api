@@ -30,3 +30,12 @@ class ModelTests(TestCase):
   def test_new_user_invalid_email_format(self):
     with self.assertRaises(ValidationError):
       get_user_model().objects.create_user('test', 'test123')
+
+  def test_create_new_super_user(self):
+    user = get_user_model().objects.create_superuser(
+      'test@londondev.com',
+      'test123'
+    )
+
+    self.assertTrue(user.is_superuser)
+    self.assertTrue(user.is_staff)
