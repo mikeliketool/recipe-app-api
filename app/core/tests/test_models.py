@@ -5,13 +5,13 @@ from django.core.validators import ValidationError
 from core import models
 
 
-def sample_user(email='test@londonappdev.com', password='testpass'):
+def sample_user(email='test@test.com', password='testpass'):
   return get_user_model().objects.create_user(email, password)
 
 
 class ModelTests(TestCase):
   def test_create_user_with_email_success(self):
-    email = 'test@londonappdev.com'
+    email = 'test@test.com'
     password = 'Testpass123'
     user = get_user_model().objects.create_user(email,
                                                 password=password)
@@ -20,7 +20,7 @@ class ModelTests(TestCase):
     self.assertTrue(user.check_password(password))
 
   def test_new_user_email_normalized(self):
-    email = 'test@LONDONAPPDEV.com'
+    email = 'test@APPDEV.com'
     user = get_user_model().objects.create_user(email, 'test123')
 
     self.assertEqual(user.email, email.lower())
@@ -39,7 +39,7 @@ class ModelTests(TestCase):
 
   def test_create_new_super_user(self):
     user = get_user_model().objects.create_superuser(
-      'test@londondev.com',
+      'test@test.com',
       'test123'
     )
 
